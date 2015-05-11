@@ -9,3 +9,9 @@ check list:
 2: route that intakes text√ and tweaks text√, renders it on page√
 3: ajaxify the front end√.
 
+to run:
+1: clone repo
+1.5: cd into repo
+2: bundle install
+3: be shotgun server.rb
+4: go to hosted page
