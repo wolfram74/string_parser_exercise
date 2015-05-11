@@ -94,7 +94,7 @@ function renderEditString(rawSentences, newSentences, changeData){
         editsString += insert + "."
       };
     } else{
-      editsString+= newSentences[index]+"."
+      editsString+= rawSentences[index]+"."
     };
   };
   return editsString
