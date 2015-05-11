@@ -25,4 +25,10 @@ describe "#text_cleaner" do
     sentences, changes, olds = text_cleaner(test_string)
     expect(changes[1]).to eq(-2)
   end
+
+  it "can distinguish an email from a sentence" do
+    test_string = "this is my email, places@wow.buzz. Please write me."
+    sentences, changes, olds = text_cleaner(test_string)
+    expect(sentences.length).to eq(2)
+  end
 end
