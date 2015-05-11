@@ -2,7 +2,10 @@ Build a web service (e.g. one that responds with JSON) in Ruby or Javascript to 
 
 Then, build a web based front-end that will submit arbitrary text to this service via AJAX and show the result. Additionally, the rendered result should include a visual representation of where corrections were made in the text.
 
+Define sentences as "Any string greater than length 0 followed by a ."
+
 check list:
 1: page with a text box
 2: route that intakes text and tweaks text, renders it on page
 3: ajaxify the front end.
+
