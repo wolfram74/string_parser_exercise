@@ -8,4 +8,11 @@ get "/" do
   erb :simple
 end
 
+post "/text_format" do
+  content_type(:json)
+  p params
+  output = %w(so much shouting)
+  output.to_json
+end
+
 __END__
