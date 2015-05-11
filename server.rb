@@ -10,9 +10,9 @@ end
 
 def sentence_cleaner(string)
   # input: string
-  # output: 2 arrays: cleaned sentences, annotations of changes
+  # output: 3 arrays:  cleaned sentences, annotations of changes, raw sentences
   sentences = string.split(".")
-  p sentences
+  old_sentences = string.split(".")
   sentence_count = sentences.length
   changes = Array.new(sentence_count)
   (sentence_count-1).times do |index|
@@ -26,15 +26,14 @@ def sentence_cleaner(string)
       changes[index+1] = -(first_char)+1
     end
   end
-  return sentences, changes
+  return sentences, changes, old_sentences
 end
 
 post "/text_format" do
-  p "hit route"
   content_type(:json)
   input_text = params["rawText"]
-  new_sentences, changes = sentence_cleaner(input_text)
-  output = {"newSentences" => new_sentences, "changeData"=> changes}
+  new_sentences, changes, raw_sentences = sentence_cleaner(input_text)
+  output = {"newSentences" => new_sentences, "changeData"=> changes, "rawSentences" =>raw_sentences}
   output.to_json
 end
 
